@@ -1,0 +1,112 @@
+
+
+<link href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+
+<script type="text/javascript">
+$(function() {
+  $(".pop_link").click(function(e) {
+  	    e.preventDefault();
+        $('#dialog-confirm').dialog('open');
+    });
+
+  $( "#dialog-confirm" ).dialog({
+      resizable: false,
+      height:270,
+      modal: true,
+      minWidth: 400,
+      autoOpen:false,
+    });
+  });
+    </script>
+
+
+
+
+<p id="notice"><%= notice %></p>
+<h1>Pending Timesheet </h1>
+<div>
+	
+	<%= grid(@timesheet) do |g|
+		  
+		  g.column name: 'Name' do |timesheet|
+	         emp = Employee.find_by(id: timesheet.employee_id)
+	         if emp.present?
+	         emp.forname.concat(" "+emp.forname)
+	         end 
+	      end
+	      
+	      g.column name: 'Date' do |timesheet|
+			    timesheet.date.strftime('%A %d-%m-%Y')
+			  end
+			  
+		  g.column name: 'Hours' do |timesheet|
+			    timesheet.hours
+			  end
+			  
+		  g.column name: 'Status' do |timesheet|
+			    timesheet.status
+			  end	  	  
+	      
+	      g.column name: 'Remarks' do |timesheet|
+			    timesheet.remarks
+			  end	 
+	       
+	      
+          if current_employee.is_manager
+                g.column :class=>'actions'  do |ts|
+	               @theet = Timesheet.find_by(id: ts.id) 
+	                link_to('Approve',timesheet_approve_path(ts.id), :title => 'Approve',:class => 'previewButton tip_trigger') +
+		            link_to('Decline', '#', :class =>'pop_link' ,:title => 'Decline') 
+		      	end
+          else            
+	            g.column :class=>'actions'  do |ts|
+		            Declined Remark
+            	end
+	      end	      
+	end -%>
+
+</div>
+
+
+<div id="dialog-confirm">
+	
+	<div>
+  <header>
+    <h3>Rejection Remark</h3>
+  </header>
+  <% if @theet.present? %> 
+  <%= form_for(@theet, action: "reject", controller: "managers" ) do |f| %>
+  
+  <div class="modal-body">
+    <div class="field">
+	    <%= f.label :decline_remarks %><br />
+	    <%= f.text_area :decline_remarks, autofocus: true %>
+	  </div>
+	   <%= f.hidden_field :status, :value => "Rejected" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+	<% end %>
+  <% end %>	
+</div>	
+	
+	
+  
+</div>
+	
+	
+
+
+	
+
+
+
+
+
+  </body>
+</html>

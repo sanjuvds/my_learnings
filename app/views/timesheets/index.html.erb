@@ -1,0 +1,91 @@
+
+
+
+<%= javascript_include_tag '/timesheet.js' %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Timesheets</h1>
+
+<table border=true>
+  <thead>
+    <tr>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+     <tr>
+            <th>Employee Name</th>
+            <th>Date</th>
+            <th>Hours</th>
+            <th>Status</th>
+            <th>Remarks</th>
+            <% if current_employee.is_manager %>
+            <th>Action</th>
+            <%else%>
+	        <td>Declined Remark</td>
+	        <%end%>
+            
+        </tr>
+    <% @timesheets.each do |timesheet| %>
+    	
+      <tr>
+      	<td>
+      		<% emp = Employee.find_by(id: timesheet.employee_id)
+      			if emp.present? 
+      		%>
+      		
+      		<%= emp.forname.concat(" "+emp.surname) %></td>
+      		
+      		<%end%>
+      	<td><%=timesheet.date %></td>
+      	<td><%=timesheet.hours %></td>
+      	<td><%=timesheet.status %></td>
+      	<td><%=timesheet.remarks %></td>
+      	
+      	<% if current_employee.is_manager %>
+      	
+        <td><%= link_to 'Approve', timesheet_approve_path(timesheet) %></td>
+        <% @timesheet = Timesheet.find_by(id: timesheet.id) %>
+        <td><a class="js-open-modal" href="#" data-modal-id="popup"> Decline </a> </td>
+        <%else%>
+        
+        <td><%=timesheet.decline_remarks %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timesheet', new_timesheet_path %>
+
+<% if @timesheet.present? %>
+
+<div id="popup" class="modal-box"> 
+  <header>
+    <a href="#" class="js-modal-close close">×</a>
+    <h3>Rejection Remark</h3>
+  </header>
+  <%= form_for(@timesheet, action: "reject") do |f| %>
+  <div class="modal-body">
+    <div class="field">
+	    <%= f.label :decline_remarks %><br />
+	    <%= f.text_area :decline_remarks, autofocus: true %>
+	  </div>
+	   <%= f.hidden_field :status, :value => "Rejected" %>
+	  
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+	<% end %>
+  
+  <footer>
+    <a href="#" class="js-modal-close">Close Button</a>
+  </footer>
+</div>
+<%end%>

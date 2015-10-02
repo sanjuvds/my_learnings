@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/nusdigital/!svn/ver/29730/trunk/src/nusdigital/app/controllers/users/devise
+END
+registrations_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/nusdigital/!svn/ver/29554/trunk/src/nusdigital/app/controllers/users/devise/registrations_controller.rb
+END
+unlocks_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/nusdigital/!svn/ver/29730/trunk/src/nusdigital/app/controllers/users/devise/unlocks_controller.rb
+END
+passwords_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/nusdigital/!svn/ver/29730/trunk/src/nusdigital/app/controllers/users/devise/passwords_controller.rb
+END
