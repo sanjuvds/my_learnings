@@ -46,10 +46,37 @@ class TimesheetsController < ApplicationController
   # PATCH/PUT /timesheets/1
   # PATCH/PUT /timesheets/1.json
   def update
+    
+    Rails.logger.info "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
+    Rails.logger.info params
+        Rails.logger.info "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
+        
+    
+    # {"timesheet"=>{"decline_remarks"=>"sdfsfs", "status"=>"Rejected"}, "commit"=>"submit remark", "controller"=>"timesheets", "action"=>"update", "id"=>"33"}
+    
+     decline_remark = params[:timesheet][:decline_remarks]   
+        
+    # if decline_remark.present?
+#       
+#       
+#       
+    # else
+            
+        
+        
+        
     respond_to do |format|
       if @timesheet.update(timesheet_params)
-        format.html { redirect_to @timesheet, notice: 'Timesheet was successfully updated.' }
-        format.json { render :show, status: :ok, location: @timesheet }
+        
+        if decline_remark.present?
+           format.html { redirect_to managers_url, notice: 'Leave application was successfully rejected.' }
+          format.json { render :index, status: :ok, location: @timesheet }
+        else
+           format.html { redirect_to @timesheet, notice: 'Leave application was successfully updated.' }
+            format.json { render :show, status: :ok, location: @timesheet }
+        end  
+        
+       
       else
         format.html { render :edit }
         format.json { render json: @timesheet.errors, status: :unprocessable_entity }
@@ -64,7 +91,8 @@ class TimesheetsController < ApplicationController
     timesheet.status = 'Approved'
     timesheet.save
     respond_to do |format|
-      format.html { redirect_to timesheets_url, notice: 'Timesheet was successfully approved.' }
+      # format.html { redirect_to timesheets_url, notice: 'Timesheet was successfully approved.' }
+      format.html { redirect_to managers_url, notice: 'Leave application was successfully approved.' }
       format.json { head :no_content }
     end
   end
@@ -103,6 +131,6 @@ class TimesheetsController < ApplicationController
     # t.text     "remarks"
     # t.text     "decline_remarks"
       
-      params.require(:timesheet).permit(:employee_id, :date, :hours, :status, :remarks, :decline_remarks)
+      params.require(:timesheet).permit(:employee_id, :from_date, :to_date, :hours, :status, :remarks, :decline_remarks)
     end
 end

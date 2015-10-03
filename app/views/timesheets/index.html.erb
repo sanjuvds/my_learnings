@@ -3,31 +3,25 @@
 
 <%= javascript_include_tag '/timesheet.js' %>
 
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Timesheets</h1>
+<h1>Listing Leave application</h1>
 
 <table border=true>
-  <thead>
-    <tr>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
+ 
 
   <tbody>
     
      <tr>
             <th>Employee Name</th>
-            <th>Date</th>
+            <th>From Date</th>
+            <th>To Date</th>
             <th>Hours</th>
             <th>Status</th>
             <th>Remarks</th>
             <% if current_employee.is_manager %>
             <th>Action</th>
             <%else%>
-	        <td>Declined Remark</td>
+	        <th>Declined Remark</th>
 	        <%end%>
-            
         </tr>
     <% @timesheets.each do |timesheet| %>
     	
@@ -40,7 +34,8 @@
       		<%= emp.forname.concat(" "+emp.surname) %></td>
       		
       		<%end%>
-      	<td><%=timesheet.date %></td>
+      	<td><%=timesheet.from_date %></td>
+      	<td><%=timesheet.to_date %></td>
       	<td><%=timesheet.hours %></td>
       	<td><%=timesheet.status %></td>
       	<td><%=timesheet.remarks %></td>

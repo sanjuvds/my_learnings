@@ -1,3 +1,11 @@
+
+<% content_for :javascript do %>
+<%= javascript_include_tag 'jquery-ui-timepicker-addon.js'%>
+
+<% end %>
+
+
+
 <%= form_for(@timesheet) do |f| %>
   <% if @timesheet.errors.any? %>
     <div id="error_explanation">
@@ -12,14 +20,27 @@
   <% end %>
 
  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.text_field :date, type: 'date', autofocus: true, value: f.object.date.try(:strftime,"%m/%d/%Y") %>
+    <%= f.label :from_date %><br />
+    
+    <%= f.date_field :from_date %>
+ </div>   
+ <div class="field">
+	<%= f.label :to_date %><br />
+    
+    <%= f.date_field :to_date %>
+    
+    
+    <%#= f.input :date, :as => :string, :required => true, :label => "Start Date/Timing: ",
+	  #:wrapper_html => { :class => "dateFieldText" },
+	 # :input_html => {:class => 'start_dateTimePicker dateTimePicker floatLeft', :value => !f.object.date.nil? ? f.object.date.strftime("%d-%m-%Y %I:%M %P") : "" } 
+	 %>
+    
     
     
     <%
-    Rails.logger.info "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
-    Rails.logger.info f.object.date.try(:strftime,"%m/%d/%Y")
-    Rails.logger.info "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
+    # Rails.logger.info "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
+    # Rails.logger.info f.object.date.try(:strftime,"%m/%d/%Y")
+    # Rails.logger.info "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
     
      %>
     

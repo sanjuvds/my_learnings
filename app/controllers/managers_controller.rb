@@ -7,7 +7,7 @@ class ManagersController < ApplicationController
     @timesheet =initialize_grid(Timesheet, 
       # :include => [:event_type ,:event_ticket_types],
       :conditions => ["status = ?", 'Pending Approval'],
-      :order => 'date'
+      :order => 'from_date'
     )
     obj = Timesheet.where(status: 'Pending Approval')
     if obj.blank?

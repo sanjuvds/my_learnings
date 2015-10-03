@@ -1,10 +1,11 @@
 class Employees::Devise::RegistrationsController < Devise::RegistrationsController
-  # prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
+  # prepend_before_filter :require_no_authentication, only: [:cancel ]#:only => [ :new, :create, :cancel ]
   # prepend_before_filter :require_no_authentication, :only => [ :show]#:new, :create, :cancel ] 
   # prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
-  #include Devise::Controllers::InternalHelpers
+  # include Devise::Controllers::InternalHelpers
   # prepend_before_filter :require_no_authentication, only: [:new, :create, :cancel]
-  prepend_before_filter :authenticate_scope!, only: [:edit, :update, :destroy]
+  # prepend_before_filter :authenticate_scope!, only: [:edit, :update, :destroy]
+  # prepend_before_filter :require_no_authentication, only: [:cancel ]#:only => [ :new, :create, :cancel ]
   
   def new
     build_resource({})

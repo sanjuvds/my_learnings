@@ -6,7 +6,11 @@ class Employee < ActiveRecord::Base
   
   has_many :timesheets
   
-  
+  # validates :forname, :presence => true
+  # validates :from_date, :presence => true
+  # validates :from_date, :presence => true
+  # validates :from_date, :presence => true
+  # validates :from_date, :presence => true
   
   
 end

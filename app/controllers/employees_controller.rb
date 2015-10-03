@@ -1,7 +1,8 @@
 class EmployeesController < ApplicationController
  # before_action #:set_employee, only: [:show, :edit, :update, :destroy]
  before_action :authenticate_employee!, only: [:edit, :update, :destroy]
- before_filter :require_no_authentication 
+ # before_filter :require_no_authentication 
+ # prepend_before_filter :require_no_authentication, only: [:cancel ]
   
   
   

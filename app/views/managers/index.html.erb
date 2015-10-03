@@ -23,13 +23,8 @@ $(function() {
   });
     </script>
 
-
-
-
-<p id="notice"><%= notice %></p>
-<h1>Pending Timesheet </h1>
+<h1>Pending Leave application </h1>
 <div>
-	
 	<%= grid(@timesheet) do |g|
 		  
 		  g.column name: 'Name' do |timesheet|
@@ -39,10 +34,14 @@ $(function() {
 	         end 
 	      end
 	      
-	      g.column name: 'Date' do |timesheet|
-			    timesheet.date.strftime('%A %d-%m-%Y')
-			  end
+	      g.column name: 'From Date' do |timesheet|
+			    timesheet.from_date.strftime('%A %d-%m-%Y')
+			end
 			  
+		  g.column name: 'To Date' do |timesheet|
+			    timesheet.to_date.strftime('%A %d-%m-%Y')
+			end
+		  
 		  g.column name: 'Hours' do |timesheet|
 			    timesheet.hours
 			  end
@@ -89,7 +88,7 @@ $(function() {
 	   <%= f.hidden_field :status, :value => "Rejected" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'submit remark' %>
   </div>
 	<% end %>
   <% end %>	

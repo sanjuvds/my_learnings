@@ -19,6 +19,7 @@ gem 'wice_grid','~> 3.4.14'
 gem 'ancestry'
 # gem 'simple-navigation', '3.6.0'
 gem 'sass-rails', '~> 5.0'
+gem 'formtastic'#,'2.0.2'
 # Use Uglifier as compressor for JavaScript assets
 #gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

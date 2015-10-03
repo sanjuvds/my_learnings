@@ -1,27 +1,30 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+ 
   
-  def after_sign_in_path_for(resource)
-    if current_employee.is_manager
-      sign_in_url = managers_url
-    else
-      sign_in_url = timesheets_url
-    end 
-    if request.referer == sign_in_url
-      super
-    else
-      stored_location_for(resource) || request.referer || root_path
-    end
-  end
+  # def after_sign_in_path_for(resource)
+    # if current_employee.is_manager
+      # sign_in_url = managers_url
+    # else
+      # sign_in_url = timesheets_url
+    # end 
+    # if request.referer == sign_in_url
+      # Rails.logger.info "111111111111111111111111111111111111111"
+      # super
+    # else
+      # Rails.logger.info "22222222222222222222222222222222222222"
+      # stored_location_for(resource) || request.referer || root_path
+    # end
+  # end
   
-  def require_no_authentication
-     if current_employee
-         return true
-     else
-         return super
-     end
-  end
+  # def require_no_authentication
+     # if current_employee
+         # return true
+     # else
+         # return super
+     # end
+  # end
 
   protected
 
