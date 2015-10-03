@@ -1,4 +1,4 @@
-class Users::Devise::PasswordsController < Devise::PasswordsController
+class Employees::Devise::PasswordsController < Devise::PasswordsController
   prepend_before_filter :require_no_authentication
   
   #include Devise::Controllers::InternalHelpers
@@ -14,11 +14,11 @@ class Users::Devise::PasswordsController < Devise::PasswordsController
     puts "Reset password calls this...................................."
     #Z281 : email converted to downcase so that if user enters any capital letter then also it will find the user.
     #Abhishek on 22/10/2013 
-    email = params[:user][:email].downcase
+    email = params[:employee][:email].downcase
     if email.nil? or (!email.nil?and email.blank?)
       @sso_auth_message = t :email_address_empty
       flash[:error] = @sso_auth_message
-      redirect_to new_user_password_path()
+      redirect_to new_employee_password_path()
     else 
       # Check if it is NUS Admin
       if @is_nusadmin
