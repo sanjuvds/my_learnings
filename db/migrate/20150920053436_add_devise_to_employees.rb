@@ -1,19 +1,19 @@
 class AddDeviseToEmployees < ActiveRecord::Migration
   def self.up
-    #change_table(:employees) do |t|
-    create_table :employees do |t|
-      t.string :forname
-      t.string :surname
-      t.text :address
-      t.string :phone
-      t.integer :raised_total
-      t.boolean :is_manager
-      
-      t.string :photo_file_name
-      t.string :photo_content_type
-      t.integer :photo_file_size
-      
-      t.timestamps null: false
+    change_table(:employees) do |t|
+    # create_table :employees do |t|
+      # t.string :forname
+      # t.string :surname
+      # t.text :address
+      # t.string :phone
+      # t.integer :raised_total
+      # t.boolean :is_manager
+#       
+      # t.string :photo_file_name
+      # t.string :photo_content_type
+      # t.integer :photo_file_size
+#       
+      # t.timestamps null: false
       # def self.up
       # change_table(:employees) do |t|
       ## Database authenticatable
