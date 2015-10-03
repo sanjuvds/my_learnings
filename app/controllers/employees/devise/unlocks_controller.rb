@@ -1,4 +1,4 @@
-class Users::Devise::UnlocksController < Devise::UnlocksController
+class Employees::Devise::UnlocksController < Devise::UnlocksController
   prepend_before_filter :require_no_authentication
   #include Devise::Controllers::InternalHelpers
   # US904
