@@ -1,6 +1,7 @@
 class AddDeviseToEmployees < ActiveRecord::Migration
   def self.up
-    change_table(:employees) do |t|
+    #change_table(:employees) do |t|
+    create_table :employees do |t|
       t.string :forname
       t.string :surname
       t.text :address
