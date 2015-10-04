@@ -5,7 +5,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :surname
       # t.string :email
       t.text :address
-      t.integer :phone
+      t.text :phone
       t.integer :raised_total
       t.integer :manager_id
       
