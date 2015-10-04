@@ -1,27 +1,13 @@
 class EmployeesController < ApplicationController
- # before_action #:set_employee, only: [:show, :edit, :update, :destroy]
  before_action :authenticate_employee!, only: [:edit, :update, :destroy]
- # before_filter :require_no_authentication 
- # prepend_before_filter :require_no_authentication, only: [:cancel ]
-  
-  
-  
-
-  # GET /employees
-  # GET /employees.json
+ 
   def index
     @employees = Employee.all
   end
 
-  # GET /employees/1
-  # GET /employees/1.json
   def show
-    
-    Rails.logger.info "$$$$$$$$$$$$$$$$$$$$$"
-    
   end
 
-  # GET /employees/new
   def new
     @employee = Employee.new
   end
@@ -30,16 +16,6 @@ class EmployeesController < ApplicationController
   def edit
   end
 
-  # POST /employees
-  # POST /employees.json
-  
-  
-  
-  
-  
-  
-  
-  
   def create
     @employee = Employee.new(employee_params)
 
@@ -54,8 +30,6 @@ class EmployeesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /employees/1
-  # PATCH/PUT /employees/1.json
   def update
     
     respond_to do |format|
