@@ -20,37 +20,8 @@
 	<%= f.label :to_date %><br />
     <%= f.date_field :to_date %>
     
-    
-    <%#= f.input :date, :as => :string, :required => true, :label => "Start Date/Timing: ",
-	  #:wrapper_html => { :class => "dateFieldText" },
-	 # :input_html => {:class => 'start_dateTimePicker dateTimePicker floatLeft', :value => !f.object.date.nil? ? f.object.date.strftime("%d-%m-%Y %I:%M %P") : "" } 
-	 %>
-    
-    
-    
-    <%
-    # Rails.logger.info "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
-    # Rails.logger.info f.object.date.try(:strftime,"%m/%d/%Y")
-    # Rails.logger.info "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
-    
-     %>
-    
-    <%#= f.date_field :date, as: :date, value: f.object.date.try(:strftime,"%mm/%dd/%yyyy") 
-    %>
-    <%#= f.date_field :date, as: :date,  :value => !f.object.date.nil? ? f.object.date.strftime("%d-%m-%Y %I:%M %P") : "" %>
-    
-    <%#= date_select("article", "written_on") 
-    %>
-    
-    
     <%= f.hidden_field :employee_id, :value => current_employee.id %>
   </div>
-
-  <div class="field">
-    <%= f.label :hours %><br />
-    <%= f.text_field :hours, autofocus: true %>
-  </div>	
-
 
 <div class="field">
     <%= f.label :remarks %><br />

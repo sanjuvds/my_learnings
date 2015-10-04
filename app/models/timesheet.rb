@@ -1,3 +1,4 @@
+require 'business_time'
 class Timesheet < ActiveRecord::Base
   
   belongs_to :employee
@@ -41,6 +42,15 @@ def validate_from_date
       errors.add(:to_date, " should not be greater than 30 days of from date")
     end
   end
+  
+ def self.business_days_between(date1, date2)
+    business_days = 0
+    while date2 > date1
+     business_days = business_days + 1 unless date2.saturday? or date2.sunday?
+     date2 = date2 - 1.day
+    end
+    business_days
+end
   
   # def validate_from_date_30_days
      # # date = from_date + 30.days

@@ -36,15 +36,18 @@ $(function() {
 	      
 	      g.column name: 'From Date' do |timesheet|
 			    timesheet.from_date.strftime('%A %d-%m-%Y')
-			end
+		 end
 			  
 		  g.column name: 'To Date' do |timesheet|
 			    timesheet.to_date.strftime('%A %d-%m-%Y')
 			end
 		  
-		  g.column name: 'Hours' do |timesheet|
-			    timesheet.hours
-			  end
+		  g.column name: 'Days' do |timesheet|
+		  	
+		  	
+		  	Timesheet.business_days_between(timesheet.from_date, timesheet.to_date)
+			
+		  end
 			  
 		  g.column name: 'Status' do |timesheet|
 			    timesheet.status
