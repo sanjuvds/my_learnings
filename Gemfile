@@ -17,6 +17,7 @@ gem 'wice_grid','~> 3.4.14'
 # gem 'font-awesome-sass',  '~> 4.3'
 # Use  SCSS for stylesheets
 gem 'ancestry'
+gem 'heroku'
 # gem 'simple-navigation', '3.6.0'
 gem 'sass-rails', '~> 5.0'
 gem 'formtastic'#,'2.0.2'
