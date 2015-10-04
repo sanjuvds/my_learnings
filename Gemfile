@@ -6,6 +6,7 @@ gem 'rails', '4.2.3'
 gem 'pg', '0.18.2'
 gem 'devise'
 
+gem 'rails_12factor'
 gem 'wice_grid','~> 3.4.14'
 
 gem 'heroku'
