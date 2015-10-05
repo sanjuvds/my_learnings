@@ -12,7 +12,7 @@
 		<% end %>
 
 		<% if !current_employee.is_manager %>
-		<%= link_to "Timesheet", timesheets_path, :method => :get, class: "timesheet" %>
+		<%= link_to "Manage Leave", timesheets_path, :method => :get, class: "timesheet" %>
 		<% end %>
 
 		<%= link_to "Sign Out", destroy_employee_session_path, :method => :delete, class: "sign_out" %>

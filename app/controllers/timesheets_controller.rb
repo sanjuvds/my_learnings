@@ -15,7 +15,7 @@ class TimesheetsController < ApplicationController
     to_date = params[:timesheet][:to_date]
     respond_to do |format|
       if @timesheet.save
-        format.html { redirect_to @timesheet, notice: 'Timesheet was successfully created.' }
+        format.html { redirect_to @timesheet, notice: 'Leave was successfully created.' }
         format.json { render :show, status: :created, location: @timesheet }
       else
         format.html { render :new }
@@ -59,7 +59,7 @@ class TimesheetsController < ApplicationController
     timesheet.status = 'Rejected'
     timesheet.save
     respond_to do |format|
-      format.html { redirect_to managers_url, notice: 'Timesheet was successfully rejected.' }
+      format.html { redirect_to managers_url, notice: 'Leave was successfully rejected.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class TimesheetsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def timesheet_params
-    params.require(:timesheet).permit(:employee_id, :from_date, :to_date, :hours, :status, :remarks, :decline_remarks)
+    params.require(:timesheet).permit(:employee_id, :from_date, :to_date, :status, :remarks, :decline_remarks)
   end
 end
