@@ -30,6 +30,21 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+  
+  
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.sendgrid.net",
+    :port => 587,
+    :domain => "nusdigital.com",
+    :authentication => :plain,
+    :user_name => "esakkiyadav",
+    :password => "feb@1234",
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.default_url_options = { :host => "nusdigital.com" }
+  
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
