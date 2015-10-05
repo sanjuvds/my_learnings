@@ -11,9 +11,7 @@ class HomeController < ApplicationController
       else
         redirect_to timesheets_url
       end  
-    end
-    
-    if !employee_signed_in?
+    else
       redirect_to new_employee_session_url
     end
   end

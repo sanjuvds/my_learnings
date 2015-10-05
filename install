@@ -1,0 +1,401 @@
+Script started on Mon 05 Oct 2015 11:43:55 PM IST
+]0;root@localhost:/home/developer/workspace/myancestry[?1034h[root@localhost myancestry]# rake wice_grid:copy_resources_to_public
+rake aborted!
+Don't know how to build task 'wice_grid:copy_resources_to_public'
+
+(See full trace by running task with --trace)
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# rake wice_grid:copy_resources_to_public[1@b[1@u[1@n[1@d[1@l[1@e[1@ [1@e[1@x[1@e[1@c[1@ 
+rake aborted!
+Don't know how to build task 'wice_grid:copy_resources_to_public'
+
+(See full trace by running task with --trace)
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# bundle exec rake wice_grid:copy_resources_to_public[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Krails s
+=> Booting WEBrick
+=> Rails 4.2.3 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2015-10-05 23:44:45] INFO  WEBrick 1.3.1
+[2015-10-05 23:44:45] INFO  ruby 2.2.2 (2015-04-13) [x86_64-linux]
+[2015-10-05 23:44:45] INFO  WEBrick::HTTPServer#start: pid=5164 port=3000
+
+
+Started GET "/managers" for 192.168.44.1 at 2015-10-05 23:44:47 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ManagersController#index as HTML
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTimesheet Load (0.4ms)[0m  [1mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."status" = $1[0m  [["status", "Pending Approval"]]
+  Rendered managers/index.html.erb within layouts/application (345.8ms)
+Completed 500 Internal Server Error in 426ms (ActiveRecord: 5.6ms)
+
+ActionView::Template::Error (undefined method `include_wice_grid_assets' for #<#<Class:0x00000002731c28>:0x0000000272b8f0>):
+    1: <% content_for :javascript do %>
+    2: 	<%= javascript_include_tag :application %>
+    3: <% end %>
+    4: <%= include_wice_grid_assets :load_on_demand => false %>
+    5: 
+    6: <link href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+    7: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  app/views/managers/index.html.erb:4:in `_app_views_managers_index_html_erb___744919815999012042_14524820'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (42.2ms)
+^C[2015-10-05 23:52:05] INFO  going to shutdown ...
+[2015-10-05 23:52:05] INFO  WEBrick::HTTPServer#start done.
+Exiting
+^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# rails s
+=> Booting WEBrick
+=> Rails 4.2.3 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+[2015-10-05 23:52:10] INFO  WEBrick 1.3.1
+[2015-10-05 23:52:10] INFO  ruby 2.2.2 (2015-04-13) [x86_64-linux]
+[2015-10-05 23:52:10] INFO  WEBrick::HTTPServer#start: pid=5208 port=3000
+
+
+Started GET "/managers" for 192.168.44.1 at 2015-10-05 23:52:17 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ManagersController#index as HTML
+  [1m[35mEmployee Load (0.6ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTimesheet Load (0.4ms)[0m  [1mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."status" = $1[0m  [["status", "Pending Approval"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "timesheets" WHERE ((status = 'Pending Approval'))
+  [1m[36mTimesheet Load (0.8ms)[0m  [1mSELECT  "timesheets".* FROM "timesheets" WHERE ((status = 'Pending Approval'))  ORDER BY "timesheets"."from_date" asc LIMIT 20 OFFSET 0[0m
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTimesheet Load (0.2ms)[0m  [1mSELECT  "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered managers/index.html.erb within layouts/application (321.2ms)
+Completed 200 OK in 529ms (Views: 455.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/managers.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/employees.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/timesheets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/scaffolds.self-dfdbed87699a917bdfcf890db6abfd121cf493b53c90553eb4366789a01a7ba6.css?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/wice_grid.self-bc6c4b35529ced24985ca98785bbf9c983df3919b522f3d34cc9d994fb925955.css?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/application.self-30cdb8ab60096b3c5e48bd17780d6e31898c5c0bdfb2ff309937ca2be410033b.css?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/managers.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/timesheets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/employees.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/wice_grid_processor.self-b476ce2c53c4b1a2eeab75feb94f4a6d2aa4012fe557da83eb3afd375bb25325.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/wice_grid_init.self-d792f3533358e8095c672a519017d3e9729e1a124c41c4493d82f375361e7af1.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/wice_grid_saved_queries_init.self-3e5018720b129e484633ba762251f37f71deb7a9744683f355ab0c78a4da6dc3.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/wice_grid.self-6a3cf5192354f71615ac51034b3e97c20eda99643fcaf5bbe6d41ad59bd12167.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 192.168.44.1 at 2015-10-05 23:52:20 +0530
+
+
+Started DELETE "/employees/sign_out" for 192.168.44.1 at 2015-10-05 23:52:28 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m+l63DdtI4Cn3rd1V0TZRn7Ou49EXvJSL6YG+AEuvMCVs2jI2g6e0SMoAKi33RxdqUaDbGPlzZwH54HpGRWjUQ=="}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://192.168.44.128:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 192.168.44.1 at 2015-10-05 23:52:28 +0530
+Processing by HomeController#show as HTML
+Redirected to http://192.168.44.128:3000/employees/sign_in
+Completed 302 Found in 20ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/sign_in" for 192.168.44.1 at 2015-10-05 23:52:28 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered employees/shared/_links.html.erb (3.1ms)
+  Rendered employees/sessions/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 143ms (Views: 141.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/sign_up" for 192.168.44.1 at 2015-10-05 23:52:31 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered employees/shared/_links.html.erb (0.6ms)
+  Rendered employees/registrations/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 108ms (Views: 103.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/sign_out" for 192.168.44.1 at 2015-10-05 23:52:38 +0530
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  Rendered employees/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 77ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/sign_in" for 192.168.44.1 at 2015-10-05 23:52:44 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered employees/shared/_links.html.erb (1.4ms)
+  Rendered employees/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 120ms (Views: 112.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/password/new" for 192.168.44.1 at 2015-10-05 23:52:49 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered employees/shared/_links.html.erb (0.6ms)
+  Rendered employees/passwords/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 131ms (Views: 128.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees/password" for 192.168.44.1 at 2015-10-05 23:52:52 +0530
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zvB8wixxAGN4ql7/9rE1IvIQRIlCmQG2wxcJNmSHlAmUvA+qfI2cG9GNs3qfA35Hos8gQwWW+zVRgPdvDJNQJQ==", "employee"=>{"email"=>"sanjuvds@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mEmployee Load (1.0ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = $1  ORDER BY "employees"."id" ASC LIMIT 1[0m  [["email", "sanjuvds@gmail.com"]]
+  Rendered employees/shared/_links.html.erb (0.4ms)
+  Rendered employees/passwords/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 215ms (Views: 82.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employees/sign_up" for 192.168.44.1 at 2015-10-05 23:53:08 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered employees/shared/_links.html.erb (0.2ms)
+  Rendered employees/registrations/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 86ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees" for 192.168.44.1 at 2015-10-05 23:53:39 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"47FKqvoBMpsVftHQTbkESUuS2IMjgYtAKGEMv+T1WXe5/TnCqv2u47xZPFUkC08sG028SWSOccO69vLmjOGdWw==", "employee"=>{"forname"=>"Forname", "surname"=>"Surname", "email"=>"ss@mailinator.com", "address"=>"Building 5, Sector 2", "phone"=>"0759224324242", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "is_manager"=>"1"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mEmployee Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "employees" WHERE "employees"."email" = 'ss@mailinator.com' LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "employees" ("email", "encrypted_password", "forname", "surname", "address", "phone", "is_manager", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["email", "ss@mailinator.com"], ["encrypted_password", "$2a$10$pPup7zwONarKCN36NHra8ewMqSwDadS3E47Jp7pcZfcvSIyjD2Wga"], ["forname", "Forname"], ["surname", "Surname"], ["address", "Building 5, Sector 2"], ["phone", "0759224324242"], ["is_manager", "t"], ["created_at", "2015-10-05 18:23:39.867720"], ["updated_at", "2015-10-05 18:23:39.867720"]]
+  [1m[36m (23.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (25.3ms)[0m  [1mUPDATE "employees" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "employees"."id" = $7[0m  [["last_sign_in_at", "2015-10-05 18:23:39.895338"], ["current_sign_in_at", "2015-10-05 18:23:39.895338"], ["last_sign_in_ip", "192.168.44.1/32"], ["current_sign_in_ip", "192.168.44.1/32"], ["sign_in_count", 1], ["updated_at", "2015-10-05 18:23:39.896437"], ["id", 10]]
+  [1m[35m (33.4ms)[0m  COMMIT
+Redirected to http://192.168.44.128:3000/
+Completed 302 Found in 230ms (ActiveRecord: 84.3ms)
+
+
+Started GET "/" for 192.168.44.1 at 2015-10-05 23:53:39 +0530
+Processing by HomeController#show as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1[0m  [["id", 10]]
+Redirected to http://192.168.44.128:3000/managers
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/managers" for 192.168.44.1 at 2015-10-05 23:53:40 +0530
+Processing by ManagersController#index as HTML
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36mTimesheet Load (0.4ms)[0m  [1mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."status" = $1[0m  [["status", "Pending Approval"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "timesheets" WHERE ((status = 'Pending Approval'))
+  [1m[36mTimesheet Load (0.3ms)[0m  [1mSELECT  "timesheets".* FROM "timesheets" WHERE ((status = 'Pending Approval'))  ORDER BY "timesheets"."from_date" asc LIMIT 20 OFFSET 0[0m
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTimesheet Load (0.3ms)[0m  [1mSELECT  "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered managers/index.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 141ms (Views: 135.8ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/employees/sign_out" for 192.168.44.1 at 2015-10-05 23:53:42 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"M2MbF0rH5q7tK9FDNZ6ad/gntuMrzKZI5uCCauw9KrJpL2h/Gjt61kQMPMZcLNESqPjSKWzDXMt0d3wzhCnung=="}
+  [1m[35mEmployee Load (0.4ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://192.168.44.128:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 192.168.44.1 at 2015-10-05 23:53:42 +0530
+Processing by HomeController#show as HTML
+Redirected to http://192.168.44.128:3000/employees/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/sign_in" for 192.168.44.1 at 2015-10-05 23:53:42 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered employees/shared/_links.html.erb (0.6ms)
+  Rendered employees/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 91ms (Views: 89.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/password/new" for 192.168.44.1 at 2015-10-05 23:53:45 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendered employees/shared/_links.html.erb (0.4ms)
+  Rendered employees/passwords/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees/password" for 192.168.44.1 at 2015-10-05 23:53:48 +0530
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gGckVtmfIaOATx5ZPCuXADv9hjNT6YXf/gdagsHWiB/jQku/Ub/E8gCPZ7vY9ChwSwiwCejVUvYEpBHla1dcxQ==", "employee"=>{"email"=>"ss@mailinator.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mEmployee Load (0.9ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = $1  ORDER BY "employees"."id" ASC LIMIT 1[0m  [["email", "ss@mailinator.com"]]
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."reset_password_token" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["reset_password_token", "28a07c54bc2490dd2fb819a896cee17d01902fa04a1bb5ac1c9428e2388952e5"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "employees" SET "reset_password_token" = $1, "reset_password_sent_at" = $2, "updated_at" = $3 WHERE "employees"."id" = $4  [["reset_password_token", "28a07c54bc2490dd2fb819a896cee17d01902fa04a1bb5ac1c9428e2388952e5"], ["reset_password_sent_at", "2015-10-05 18:23:48.627676"], ["updated_at", "2015-10-05 18:23:48.628426"], ["id", 10]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  Rendered employees/mailer/reset_password_instructions.html.erb (2.0ms)
+
+Devise::Mailer#reset_password_instructions: processed outbound mail in 1604.9ms
+
+Sent mail to ss@mailinator.com (1447.0ms)
+Date: Mon, 05 Oct 2015 23:53:50 +0530
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ss@mailinator.com
+Message-ID: <5612c03693470_1458112266c27637@localhost.localdomain.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello ss@mailinator.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/employees/password/edit?reset_password_token=ekLpT-d3xG-kkKzLiqNx">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://192.168.44.128:3000/employees/sign_in
+Completed 302 Found in 3848ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/employees/sign_in" for 192.168.44.1 at 2015-10-05 23:53:52 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered employees/shared/_links.html.erb (0.7ms)
+  Rendered employees/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 201ms (Views: 198.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/password/edit?reset_password_token=[FILTERED]" for 192.168.44.1 at 2015-10-05 23:54:58 +0530
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendered employees/shared/_links.html.erb (0.4ms)
+  Rendered employees/passwords/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 80ms (Views: 78.7ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/employees/password" for 192.168.44.1 at 2015-10-05 23:55:11 +0530
+Processing by Devise::PasswordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CwoxOMy8Nca3wUxsOaI1KW7HZCirrb8YcXsIwNhez9toL17RRJzQlzcBNY7dfYpZHjJSEhCRaDGL2EOnct8bAQ==", "employee"=>{"reset_password_token"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Change my password"}
+  [1m[35mEmployee Load (1.0ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."reset_password_token" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["reset_password_token", "28a07c54bc2490dd2fb819a896cee17d01902fa04a1bb5ac1c9428e2388952e5"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered employees/shared/_links.html.erb (0.4ms)
+  Rendered employees/passwords/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 184ms (Views: 77.7ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/employees/password" for 192.168.44.1 at 2015-10-05 23:55:22 +0530
+Processing by Devise::PasswordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ihq1yMicqLG5KK012kx92W1tXNwpZF9HYISSuLOUWrdBP9ohQLxN4Dno1Nc+k8KpHZhq5pJYiG6aJ9nfGRWObQ==", "employee"=>{"reset_password_token"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Change my password"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."reset_password_token" = $1  ORDER BY "employees"."id" ASC LIMIT 1[0m  [["reset_password_token", "28a07c54bc2490dd2fb819a896cee17d01902fa04a1bb5ac1c9428e2388952e5"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "employees" SET "encrypted_password" = $1, "reset_password_token" = $2, "reset_password_sent_at" = $3, "updated_at" = $4 WHERE "employees"."id" = $5[0m  [["encrypted_password", "$2a$10$qnnlU.LiVi3acumpkSEeL.EmrTo7t6xy9PYjd2Tsfh774sVEvCuCS"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["updated_at", "2015-10-05 18:25:22.766263"], ["id", 10]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "employees" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "employees"."id" = $4  [["current_sign_in_at", "2015-10-05 18:25:22.770260"], ["sign_in_count", 2], ["updated_at", "2015-10-05 18:25:22.771321"], ["id", 10]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://192.168.44.128:3000/
+Completed 302 Found in 90ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 192.168.44.1 at 2015-10-05 23:55:22 +0530
+Processing by HomeController#show as HTML
+  [1m[35mEmployee Load (0.9ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["id", 10]]
+Redirected to http://192.168.44.128:3000/managers
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/managers" for 192.168.44.1 at 2015-10-05 23:55:22 +0530
+Processing by ManagersController#index as HTML
+  [1m[36mEmployee Load (0.8ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1[0m  [["id", 10]]
+  [1m[35mTimesheet Load (0.5ms)[0m  SELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."status" = $1  [["status", "Pending Approval"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "timesheets" WHERE ((status = 'Pending Approval'))[0m
+  [1m[35mTimesheet Load (0.3ms)[0m  SELECT  "timesheets".* FROM "timesheets" WHERE ((status = 'Pending Approval'))  ORDER BY "timesheets"."from_date" asc LIMIT 20 OFFSET 0
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35mTimesheet Load (0.2ms)[0m  SELECT  "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered managers/index.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 156ms (Views: 146.2ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/employees/sign_out" for 192.168.44.1 at 2015-10-05 23:55:27 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"E9K/bC9Px83QP3OIZ0EW0Wq7JlovPpyXD2KXP7rMqWxw99CFp28inFD/CmqDnqmhGk4QYJQCS771wdxYEE19tg=="}
+  [1m[36mEmployee Load (0.6ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://192.168.44.128:3000/
+Completed 302 Found in 14ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 192.168.44.1 at 2015-10-05 23:55:27 +0530
+Processing by HomeController#show as HTML
+Redirected to http://192.168.44.128:3000/employees/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/sign_in" for 192.168.44.1 at 2015-10-05 23:55:27 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered employees/shared/_links.html.erb (0.4ms)
+  Rendered employees/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 100ms (Views: 98.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees/sign_in" for 192.168.44.1 at 2015-10-05 23:55:48 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gGix4UL18KeINuPk+jI8fFXRtnDjsbBhOZXKc55G8XLmwalJbKbsPHVKrmVNr+DKsHexIba2HmsiPgDoEe7ATA==", "employee"=>{"email"=>"ss@mailinator.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mEmployee Load (0.9ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."email" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["email", "ss@mailinator.com"]]
+Completed 401 Unauthorized in 77ms (ActiveRecord: 0.9ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gGix4UL18KeINuPk+jI8fFXRtnDjsbBhOZXKc55G8XLmwalJbKbsPHVKrmVNr+DKsHexIba2HmsiPgDoEe7ATA==", "employee"=>{"email"=>"ss@mailinator.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered employees/shared/_links.html.erb (0.3ms)
+  Rendered employees/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 143ms (Views: 75.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees/sign_in" for 192.168.44.1 at 2015-10-05 23:55:53 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QQXiEWZE2klRsJtBH9uiHiCXqMOQgGZkDQF+FkSfQw8nrPq5SBfG0qzM1sCoRn6oxTGvksWHyG4WqrSNyzdyMQ==", "employee"=>{"email"=>"ss@mailinator.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.9ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."email" = $1  ORDER BY "employees"."id" ASC LIMIT 1[0m  [["email", "ss@mailinator.com"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "employees" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "employees"."id" = $5[0m  [["last_sign_in_at", "2015-10-05 18:25:22.770260"], ["current_sign_in_at", "2015-10-05 18:25:53.910876"], ["sign_in_count", 3], ["updated_at", "2015-10-05 18:25:53.912292"], ["id", 10]]
+  [1m[35m (7.7ms)[0m  COMMIT
+Redirected to http://192.168.44.128:3000/
+Completed 302 Found in 102ms (ActiveR
