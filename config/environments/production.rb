@@ -33,6 +33,7 @@ Rails.application.configure do
   
   
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
   # config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
     :address => "smtp.sendgrid.net",
@@ -43,7 +44,14 @@ Rails.application.configure do
     :password => "sanjux@12",
     :enable_starttls_auto => true
   }
-  config.action_mailer.default_url_options = { :host => "nusdigital.com" }
+  # config.action_mailer.default_url_options = { :host => "nusdigital.com" }
+  
+  
+  config.action_mailer.default_url_options = { host: 'localhost:3000'}
+
+  config.action_mailer.perform_deliveries = true
+  # Override Action Mailer's 'silent errors' in development
+  config.action_mailer.raise_delivery_errors = true
   
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
