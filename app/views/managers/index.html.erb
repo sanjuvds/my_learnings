@@ -31,11 +31,11 @@
 	end
 
 	g.column name: 'From Date' do |timesheet|
-	timesheet.from_date.strftime('%A %d-%m-%Y')
+	timesheet.from_date.strftime('%d-%m-%Y')
 	end
 
 	g.column name: 'To Date' do |timesheet|
-	timesheet.to_date.strftime('%A %d-%m-%Y')
+	timesheet.to_date.strftime('%d-%m-%Y')
 	end
 
 	g.column name: 'Days' do |timesheet|
@@ -53,7 +53,7 @@
 	end
 
 	if current_employee.is_manager
-	g.column :class=>'actions'  do |ts|
+	g.column name: 'Action', :class=>'actions'  do |ts|
 	@theet = Timesheet.find_by(id: ts.id)
 	link_to('Approve',timesheet_approve_path(ts.id), :data => {:confirm => 'Are you sure you want to approve the leave application?'}, :title => 'Approve',:class => 'previewButton tip_trigger') +
 	link_to('/Decline', '#', :class =>'pop_link' ,:title => 'Decline')

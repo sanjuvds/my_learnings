@@ -15,7 +15,7 @@ class Timesheet < ActiveRecord::Base
   end
 
   def validate_to_date_30_days
-    if to_date > (from_date + 30.days)
+    if to_date > (from_date + 29.days)
       errors.add(:to_date, " should not be greater than 30 days of from date")
     end
   end
@@ -26,6 +26,6 @@ class Timesheet < ActiveRecord::Base
       business_days = business_days + 1 unless date2.saturday? or date2.sunday?
       date2 = date2 - 1.day
     end
-    business_days
+    business_days + 1
   end
 end

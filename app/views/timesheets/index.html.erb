@@ -5,9 +5,8 @@
             <th>Employee Name</th>
             <th>From Date</th>
             <th>To Date</th>
-            <th>Hours</th>
             <th>Status</th>
-            <th>Remarks</th>
+           
             <% if current_employee.is_manager %>
             <th>Action</th>
             <%else%>
@@ -25,11 +24,10 @@
       		<%= emp.forname.concat(" "+emp.surname) %></td>
       		
       		<%end%>
-      	<td><%=timesheet.from_date %></td>
-      	<td><%=timesheet.to_date %></td>
-      	<td><%=timesheet.hours %></td>
+      	<td><%=timesheet.from_date.strftime('%A %d-%m-%Y') %></td>
+      	<td><%=timesheet.to_date.strftime('%A %d-%m-%Y') %></td>
       	<td><%=timesheet.status %></td>
-      	<td><%=timesheet.remarks %></td>
+      	
       	
       	<% if current_employee.is_manager %>
       	

@@ -398,4 +398,317 @@ Processing by Devise::SessionsController#create as HTML
   [1m[36mSQL (0.5ms)[0m  [1mUPDATE "employees" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "employees"."id" = $5[0m  [["last_sign_in_at", "2015-10-05 18:25:22.770260"], ["current_sign_in_at", "2015-10-05 18:25:53.910876"], ["sign_in_count", 3], ["updated_at", "2015-10-05 18:25:53.912292"], ["id", 10]]
   [1m[35m (7.7ms)[0m  COMMIT
 Redirected to http://192.168.44.128:3000/
-Completed 302 Found in 102ms (ActiveR
+Completed 302 Found in 102ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/" for 192.168.44.1 at 2015-10-05 23:55:53 +0530
+Processing by HomeController#show as HTML
+  [1m[36mEmployee Load (0.4ms)[0m  [1mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1[0m  [["id", 10]]
+Redirected to http://192.168.44.128:3000/managers
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/managers" for 192.168.44.1 at 2015-10-05 23:55:53 +0530
+Processing by ManagersController#index as HTML
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1  ORDER BY "employees"."id" ASC LIMIT 1  [["id", 10]]
+  [1m[36mTimesheet Load (0.2ms)[0m  [1mSELECT "timesheets".* FROM "timesheets" WHERE "timesheets"."status" = $1[0m  [["status", "Pending Approval"]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "timesheets" WHERE ((status = 'Pending Approval'))
+  [1m[36mTimesheet Load (0.3ms)[0m  [1mSELECT  "timesheets".* FROM "timesheets" WHERE ((status = 'Pending Approval'))  ORDER BY "timesheets"."from_date" asc LIMIT 20 OFFSET 0[0m
+  [1m[35mEmployee Load (0.3ms)[0m  SELECT  "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36mTimesheet Load (0.2ms)[0m  [1mSELECT  "timesheets".* FROM "timesheets" WHERE "timesheets"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered managers/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 115ms (Views: 111.0ms | ActiveRecord: 1.8ms)
+^C[2015-10-05 23:58:02] INFO  going to shutdown ...
+[2015-10-05 23:58:02] INFO  WEBrick::HTTPServer#start done.
+Exiting
+^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# git add .
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# fi[K[Kgit commit -m ""[Cc"h"a"n"g"e"d" "s"o"m"e" "b"a"s"i"c" "s"e"t"t"i"n"g"s"
+[master baa6a1a] changed some basic settings
+ 5 files changed, 405 insertions(+), 7 deletions(-)
+ create mode 100644 install
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# gi tp[K[K[Kt push
+Counting objects: 26, done.
+Compressing objects:   7% (1/14)   Compressing objects:  14% (2/14)   Compressing objects:  21% (3/14)   Compressing objects:  28% (4/14)   Compressing objects:  35% (5/14)   Compressing objects:  42% (6/14)   Compressing objects:  50% (7/14)   Compressing objects:  57% (8/14)   Compressing objects:  64% (9/14)   Compressing objects:  71% (10/14)   Compressing objects:  78% (11/14)   Compressing objects:  85% (12/14)   Compressing objects:  92% (13/14)   Compressing objects: 100% (14/14)   Compressing objects: 100% (14/14), done.
+Writing objects:   7% (1/14)   Writing objects:  14% (2/14)   Writing objects:  21% (3/14)   Writing objects:  28% (4/14)   Writing objects:  35% (5/14)   Writing objects:  42% (6/14)   Writing objects:  50% (7/14)   Writing objects:  57% (8/14)   Writing objects:  64% (9/14)   Writing objects:  71% (10/14)   Writing objects:  78% (11/14)   Writing objects:  85% (12/14)   Writing objects:  92% (13/14)   Writing objects: 100% (14/14)   Writing objects: 100% (14/14), 6.77 KiB, done.
+Total 14 (delta 10), reused 0 (delta 0)
+To ssh://git@github.com/sanjuvds/my_learnings
+   f694574..baa6a1a  master -> master
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# git pushcommit -m "changed some basic settings"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd .[K[2Prails sbundle exec rake wice_grid:copy_resources_to_public[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Krails ssu postgres[1Ps[3Prails csu postgres [6Pbundlegit pushcommit -m "changed the phone data type in employee table"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Padd db/migrate/20150920050227_create_employees.rb[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crails s[Kke db:migrate[4Psu postgres[4Prails ssu postgres[4Prails sservice postgresql-9.4 restart[17Prvm use 2.2.2cd /home/developer/workspace/myancestry/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kgit pushcommit -m "added gem business_time for days calculations "[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd Gemfile.lock[K[Kpush heroku master[7Padd Gemfile^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# ^C
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# git pusth [K[K[Kh herol[Kky ma[K[K[K[Ku master
+Counting objects: 26, done.
+Compressing objects:   7% (1/14)   Compressing objects:  14% (2/14)   Compressing objects:  21% (3/14)   Compressing objects:  28% (4/14)   Compressing objects:  35% (5/14)   Compressing objects:  42% (6/14)   Compressing objects:  50% (7/14)   Compressing objects:  57% (8/14)   Compressing objects:  64% (9/14)   Compressing objects:  71% (10/14)   Compressing objects:  78% (11/14)   Compressing objects:  85% (12/14)   Compressing objects:  92% (13/14)   Compressing objects: 100% (14/14)   Compressing objects: 100% (14/14), done.
+Writing objects:   7% (1/14)   Writing objects:  14% (2/14)   Writing objects:  21% (3/14)   Writing objects:  28% (4/14)   Writing objects:  35% (5/14)   Writing objects:  42% (6/14)   Writing objects:  50% (7/14)   Writing objects:  57% (8/14)   Writing objects:  64% (9/14)   Writing objects:  71% (10/14)   Writing objects:  78% (11/14)   Writing objects:  85% (12/14)   Writing objects:  92% (13/14)   Writing objects: 100% (14/14)   Writing objects: 100% (14/14), 6.77 KiB, done.
+Total 14 (delta 10), reused 0 (delta 0)
+remote: Compressing source files... done.[K
+remote: Building source:[K
+remote: 
+remote: -----> Ruby app detected[K
+remote: -----> Compiling Ruby/Rails[K
+remote: -----> Using Ruby version: ruby-2.0.0[K
+remote: -----> Installing dependencies using bundler 1.9.7[K
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment[K
+remote:        Rubygems 2.0.14 is not threadsafe, so your gems must be installed one at a time. Upgrade to Rubygems 2.1.0 or higher to enable parallel gem installation.[K
+remote:        Using rake 10.4.2[K
+remote:        Using i18n 0.7.0[K
+remote:        Using json 1.8.3[K
+remote:        Using minitest 5.8.0[K
+remote:        Using thread_safe 0.3.5[K
+remote:        Using tzinfo 1.2.2[K
+remote:        Using activesupport 4.2.3[K
+remote:        Using builder 3.2.2[K
+remote:        Using erubis 2.7.0[K
+remote:        Using mini_portile 0.6.2[K
+remote:        Using nokogiri 1.6.6.2[K
+remote:        Using rails-deprecated_sanitizer 1.0.3[K
+remote:        Using rails-dom-testing 1.0.6[K
+remote:        Using loofah 2.0.2[K
+remote:        Using rails-html-sanitizer 1.0.2[K
+remote:        Using actionview 4.2.3[K
+remote:        Using rack 1.6.4[K
+remote:        Using rack-test 0.6.3[K
+remote:        Using actionpack 4.2.3[K
+remote:        Using globalid 0.3.6[K
+remote:        Using activejob 4.2.3[K
+remote:        Using mime-types 2.6.1[K
+remote:        Using mail 2.6.3[K
+remote:        Using actionmailer 4.2.3[K
+remote:        Using activemodel 4.2.3[K
+remote:        Using arel 6.0.3[K
+remote:        Using activerecord 4.2.3[K
+remote:        Using addressable 2.3.8[K
+remote:        Using bcrypt 3.1.10[K
+remote:        Using business_time 0.7.4[K
+remote:        Using coffee-script-source 1.9.1.1[K
+remote:        Using execjs 2.5.2[K
+remote:        Using coffee-script 2.4.1[K
+remote:        Using thor 0.19.1[K
+remote:        Using railties 4.2.3[K
+remote:        Using coffee-rails 4.1.0[K
+remote:        Using orm_adapter 0.5.0[K
+remote:        Using responders 2.1.0[K
+remote:        Using warden 1.2.3[K
+remote:        Using devise 3.5.2[K
+remote:        Using unf_ext 0.0.7.1[K
+remote:        Using unf 0.1.4[K
+remote:        Using domain_name 0.5.24[K
+remote:        Using exception_notification 2.6.1[K
+remote:        Using excon 0.45.4[K
+remote:        Using multi_json 1.11.2[K
+remote:        Using heroku-api 0.3.23[K
+remote:        Using launchy 2.4.3[K
+remote:        Using net-ssh 3.0.1[K
+remote:        Using net-ssh-gateway 1.2.0[K
+remote:        Using netrc 0.10.3[K
+remote:        Using http-cookie 1.0.2[K
+remote:        Using rest-client 1.8.0[K
+remote:        Using rubyzip 1.1.7[K
+remote:        Using heroku 3.41.5[K
+remote:        Using jbuilder 2.3.1[K
+remote:        Using jquery-rails 4.0.4[K
+remote:        Using kaminari 0.16.3[K
+remote:        Using libv8 3.16.14.11[K
+remote:        Using mono_logger 1.1.0[K
+remote:        Using pg 0.18.2[K
+remote:        Using rack-protection 1.5.3[K
+remote:        Using bundler 1.9.7[K
+remote:        Using sprockets 3.2.0[K
+remote:        Using sprockets-rails 2.3.2[K
+remote:        Using rails 4.2.3[K
+remote:        Using rails_serve_static_assets 0.0.4[K
+remote:        Using rails_stdout_logging 0.0.4[K
+remote:        Using rails_12factor 0.0.3[K
+remote:        Using redis 3.2.1[K
+remote:        Using redis-namespace 1.5.2[K
+remote:        Using ref 2.0.0[K
+remote:        Using tilt 1.4.1[K
+remote:        Using sinatra 1.4.6[K
+remote:        Using vegas 0.1.11[K
+remote:        Using resque 1.25.2[K
+remote:        Using sass 3.4.16[K
+remote:        Using sass-rails 5.0.3[K
+remote:        Using therubyracer 0.12.2[K
+remote:        Using wice_grid 3.4.14[K
+remote:        Bundle complete! 16 Gemfile dependencies, 80 gems now installed.[K
+remote:        Gems in the groups development and test were not installed.[K
+remote:        Bundled gems are installed into ./vendor/bundle.[K
+remote:        Bundle completed (0.80s)[K
+remote:        Cleaning up the bundler cache.[K
+remote: -----> Preparing app for Rails asset pipeline[K
+remote:        Running: rake assets:precompile[K
+remote:        Asset precompilation completed (4.45s)[K
+remote:        Cleaning assets[K
+remote:        Running: rake assets:clean[K
+remote: 
+remote: ###### WARNING:[K
+remote:        You have not declared a Ruby version in your Gemfile.[K
+remote:        To set your Ruby version add this line to your Gemfile:[K
+remote:        ruby '2.0.0'[K
+remote:        # See https://devcenter.heroku.com/articles/ruby-versions for more information.[K
+remote: 
+remote: ###### WARNING:[K
+remote:        No Procfile detected, using the default web server (webrick)[K
+remote:        https://devcenter.heroku.com/articles/ruby-default-web-server[K
+remote: 
+remote: -----> Discovering process types[K
+remote:        Procfile declares types -> (none)[K
+remote:        Default types for Ruby  -> console, rake, web, worker[K
+remote: 
+remote: -----> Compressing... done, 47.2MB[K
+remote: -----> Launching... done, v25[K
+remote:        https://radiant-shore-2417.herokuapp.com/ deployed to Heroku[K
+remote: 
+remote: Verifying deploy.... done.[K
+To https://git.heroku.com/radiant-shore-2417.git
+   f694574..baa6a1a  master -> master
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# 
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# git push heroku master[Kcommit -m "changed some basic settings"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush[K heroku master[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[C[C[C[C[C[1Pmaster[1Paster[1Pster[1Pter[1Per[1Pr[K logs
+[36m2015-10-05T18:33:53.021169+00:00 app[web.1]:[0m 8"}
+[36m2015-10-05T18:33:53.021170+00:00 app[web.1]:[0m   * rack.request.cookie_string                     : _myancestry_session=3D=
+[36m2015-10-05T18:33:53.021171+00:00 app[web.1]:[0m NmlNQXJTVDZuU2h3VnpEK3RnSVBFczYveWUxUmhaUUMvblJGZFpkd3JJVWxwWE9CL0x1NVZXY=
+[36m2015-10-05T18:33:53.021172+00:00 app[web.1]:[0m UpscnY5SVNuZFVVYzhJMFhhQ1lmckZlUUlZNWNtSXJrb2twemlPVVlOaDNXcm56UUloQWFpb3=
+[36m2015-10-05T18:33:53.021173+00:00 app[web.1]:[0m lnYjlvVUpNRW5tWUg2ZmtSU0JnS1VRdlVwTXk5dTk1UnJaS2U3TG13PT0tLTI2VEpWcXVpdzV=
+[36m2015-10-05T18:33:53.021175+00:00 app[web.1]:[0m   * rack.request.form_hash                         : {"utf8"=3D>"=E2=9C=93=
+[36m2015-10-05T18:33:53.021176+00:00 app[web.1]:[0m ", "authenticity_token"=3D>"hQsBVgFhZGR0nQBq07ynrx1PIkXbaJeINHCbdL/FGx+6O=
+[36m2015-10-05T18:33:53.021174+00:00 app[web.1]:[0m ESWFjM0R3UGRIVUE9PQ%3D%3D--63082ba72ebd9709f685ebb320fb762733259f68
+[36m2015-10-05T18:33:53.021178+00:00 app[web.1]:[0m "=3D>"Forname", "surname"=3D>"Surname", "email"=3D>"manager@gmail.com", "=
+[36m2015-10-05T18:33:53.021179+00:00 app[web.1]:[0m address"=3D>"Building 5, Sector 2", "phone"=3D>"0759224324242", "password=
+[36m2015-10-05T18:33:53.021177+00:00 app[web.1]:[0m INt/NbGxjhh/J+VgI5FgYbuusGfQ0al91VQGBGUNw=3D=3D", "employee"=3D>{"forname=
+[36m2015-10-05T18:33:53.021180+00:00 app[web.1]:[0m "=3D>"[FILTERED]", "password_confirmation"=3D>"[FILTERED]", "is_manager"=3D=
+[36m2015-10-05T18:33:53.021184+00:00 app[web.1]:[0m   * rack.request.form_vars                         : [FILTERED]
+[36m2015-10-05T18:33:53.021182+00:00 app[web.1]:[0m   * rack.request.form_input                        : #<StringIO:0x007f18c=
+[36m2015-10-05T18:33:53.021181+00:00 app[web.1]:[0m >"0"}, "commit"=3D>"Sign up"}
+[36m2015-10-05T18:33:53.021183+00:00 app[web.1]:[0m f2fe8f8>
+[36m2015-10-05T18:33:53.021185+00:00 app[web.1]:[0m   * rack.request.query_hash                        : {}
+[36m2015-10-05T18:33:53.021196+00:00 app[web.1]:[0m   * rack.run_once                                  : false
+[36m2015-10-05T18:33:53.021197+00:00 app[web.1]:[0m   * rack.session                                   : #<ActionDispatch::Re=
+[36m2015-10-05T18:33:53.021195+00:00 app[web.1]:[0m 
+[36m2015-10-05T18:33:53.021198+00:00 app[web.1]:[0m quest::Session:0x007f18cf31aff8>
+[36m2015-10-05T18:33:53.021194+00:00 app[web.1]:[0m   * rack.request.query_string                      : =
+[36m2015-10-05T18:33:53.021203+00:00 app[web.1]:[0m   * rack.version                                   : [1, 3]
+[36m2015-10-05T18:33:53.021199+00:00 app[web.1]:[0m   * rack.session.options                           : #<ActionDispatch::Re=
+[36m2015-10-05T18:33:53.021200+00:00 app[web.1]:[0m quest::Session::Options:0x007f18cf31afa8>
+[36m2015-10-05T18:33:53.021201+00:00 app[web.1]:[0m   * rack.url_scheme                                : http
+[36m2015-10-05T18:33:53.021207+00:00 app[web.1]:[0m able]}, :intercept_401=3D>false, :failure_app=3D>#<Devise::Delegator:0x00=
+[36m2015-10-05T18:33:53.021208+00:00 app[web.1]:[0m 7f18cc612ec0>}
+[36m2015-10-05T18:33:53.021206+00:00 app[web.1]:[0m default_strategies=3D>{:employee=3D>[:rememberable, :database_authenticat=
+[36m2015-10-05T18:33:53.021205+00:00 app[web.1]:[0m 66040680 @config=3D{:default_scope=3D>:employee, :scope_defaults=3D>{}, :=
+[36m2015-10-05T18:33:53.021204+00:00 app[web.1]:[0m   * warden                                         : Warden::Proxy:698722=
+[36m2015-10-05T18:33:53.021213+00:00 app[web.1]:[0m 
+[36m2015-10-05T18:33:53.021210+00:00 app[web.1]:[0m 
+[36m2015-10-05T18:33:53.021211+00:00 app[web.1]:[0m   * Process: 3
+[36m2015-10-05T18:33:53.021212+00:00 app[web.1]:[0m   * Server : 1c1e462d-de97-417e-a848-d519ca420f8d
+[36m2015-10-05T18:33:53.021215+00:00 app[web.1]:[0m 
+[36m2015-10-05T18:33:53.021214+00:00 app[web.1]:[0m 
+[36m2015-10-05T18:33:53.021209+00:00 app[web.1]:[0m   =
+[36m2015-10-05T18:33:53.022405+00:00 app[web.1]:[0m   vendor/ruby-2.0.0/lib/ruby/2.0.0/net/smtp.rb:963:in `check_auth_response'
+[36m2015-10-05T18:33:53.022410+00:00 app[web.1]:[0m   vendor/ruby-2.0.0/lib/ruby/2.0.0/net/smtp.rb:520:in `start'
+[36m2015-10-05T18:33:53.022403+00:00 app[web.1]:[0m Net::SMTPAuthenticationError (535 Authentication failed: account disabled
+[36m2015-10-05T18:33:53.022404+00:00 app[web.1]:[0m ):
+[36m2015-10-05T18:33:53.022401+00:00 app[web.1]:[0m 
+[36m2015-10-05T18:33:53.022406+00:00 app[web.1]:[0m   vendor/ruby-2.0.0/lib/ruby/2.0.0/net/smtp.rb:740:in `auth_plain'
+[36m2015-10-05T18:33:53.022407+00:00 app[web.1]:[0m   vendor/ruby-2.0.0/lib/ruby/2.0.0/net/smtp.rb:732:in `authenticate'
+[36m2015-10-05T18:33:53.022409+00:00 app[web.1]:[0m   vendor/ruby-2.0.0/lib/ruby/2.0.0/net/smtp.rb:567:in `do_start'
+[36m2015-10-05T18:33:53.022415+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionmailer-4.2.3/lib/action_mailer/base.rb:543:in `block in deliver_mail'
+[36m2015-10-05T18:33:53.022416+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `block in instrument'
+[36m2015-10-05T18:33:53.022414+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/mail-2.6.3/lib/mail/message.rb:236:in `block in deliver'
+[36m2015-10-05T18:33:53.022411+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/mail-2.6.3/lib/mail/network/delivery_methods/smtp.rb:112:in `deliver!'
+[36m2015-10-05T18:33:53.022412+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/mail-2.6.3/lib/mail/message.rb:2141:in `do_delivery'
+[36m2015-10-05T18:33:53.022417+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+[36m2015-10-05T18:33:53.022418+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `instrument'
+[36m2015-10-05T18:33:53.022420+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionmailer-4.2.3/lib/action_mailer/base.rb:541:in `deliver_mail'
+[36m2015-10-05T18:33:53.022421+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/mail-2.6.3/lib/mail/message.rb:236:in `deliver'
+[36m2015-10-05T18:33:53.022423+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionmailer-4.2.3/lib/action_mailer/message_delivery.rb:105:in `deliver'
+[36m2015-10-05T18:33:53.022422+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionmailer-4.2.3/lib/action_mailer/message_delivery.rb:85:in `deliver_now'
+[36m2015-10-05T18:33:53.022424+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/exception_notification-2.6.1/lib/exception_notifier.rb:42:in `rescue in call'
+[36m2015-10-05T18:33:53.022425+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/exception_notification-2.6.1/lib/exception_notifier.rb:34:in `call'
+[36m2015-10-05T18:33:53.022426+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+[36m2015-10-05T18:33:53.022428+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+[36m2015-10-05T18:33:53.022430+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+[36m2015-10-05T18:33:53.022429+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+[36m2015-10-05T18:33:53.022431+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/conditionalget.rb:38:in `call'
+[36m2015-10-05T18:33:53.022432+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+[36m2015-10-05T18:33:53.022433+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+[36m2015-10-05T18:33:53.022434+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/flash.rb:260:in `call'
+[36m2015-10-05T18:33:53.022437+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+[36m2015-10-05T18:33:53.022438+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+[36m2015-10-05T18:33:53.022439+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.3/lib/active_record/query_cache.rb:36:in `call'
+[36m2015-10-05T18:33:53.022435+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+[36m2015-10-05T18:33:53.022441+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+[36m2015-10-05T18:33:53.022440+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+[36m2015-10-05T18:33:53.022442+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:84:in `run_callbacks'
+[36m2015-10-05T18:33:53.022444+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+[36m2015-10-05T18:33:53.022446+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+[36m2015-10-05T18:33:53.022445+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+[36m2015-10-05T18:33:53.022447+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+[36m2015-10-05T18:33:53.022448+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/railties-4.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+[36m2015-10-05T18:33:53.022449+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `block in call'
+[36m2015-10-05T18:33:53.022451+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+[36m2015-10-05T18:33:53.022452+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:26:in `tagged'
+[36m2015-10-05T18:33:53.022456+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `tagged'
+[36m2015-10-05T18:33:53.022458+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `call'
+[36m2015-10-05T18:33:53.022459+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+[36m2015-10-05T18:33:53.022460+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+[36m2015-10-05T18:33:53.022461+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+[36m2015-10-05T18:33:53.022463+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/activesupport-4.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+[36m2015-10-05T18:33:53.022465+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+[36m2015-10-05T18:33:53.022464+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/static.rb:116:in `call'
+[36m2015-10-05T18:33:53.022466+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/railties-4.2.3/lib/rails/engine.rb:518:in `call'
+[36m2015-10-05T18:33:53.022468+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+[36m2015-10-05T18:33:53.022467+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/railties-4.2.3/lib/rails/application.rb:165:in `call'
+[36m2015-10-05T18:33:53.022469+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+[36m2015-10-05T18:33:53.022471+00:00 app[web.1]:[0m   vendor/bundle/ruby/2.0.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+[36m2015-10-05T18:33:53.022472+00:00 app[web.1]:[0m   vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+[36m2015-10-05T18:33:53.022473+00:00 app[web.1]:[0m   vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+[36m2015-10-05T18:33:53.022475+00:00 app[web.1]:[0m 
+[36m2015-10-05T18:33:53.022476+00:00 app[web.1]:[0m 
+[36m2015-10-05T18:33:53.022474+00:00 app[web.1]:[0m   vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+[33m2015-10-05T18:33:53.346238+00:00 heroku[router]:[0m at=info method=GET path="/favicon.ico" host=radiant-shore-2417.herokuapp.com request_id=eda605e9-dccf-40ba-bd5f-72c95f77bec9 fwd="114.143.136.227" dyno=web.1 connect=1ms service=5ms status=304 bytes=133
+]0;root@localhost:/home/developer/workspace/myancestry[root@localhost myancestry]# heroku logsgit push heroku master[K heroku master[11Pheroku logs[Kexit
+exit
+
+Script done on Tue 06 Oct 2015 12:06:12 AM IST
