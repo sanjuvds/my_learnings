@@ -1,3 +1,7 @@
+<% content_for :javascript do %>
+	<%= javascript_include_tag :application %>
+<% end %>
+
 <link href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -50,7 +54,7 @@
 	if current_employee.is_manager
 	g.column :class=>'actions'  do |ts|
 	@theet = Timesheet.find_by(id: ts.id)
-	link_to('Approve',timesheet_approve_path(ts.id), :title => 'Approve',:class => 'previewButton tip_trigger') +
+	link_to('Approve',timesheet_approve_path(ts.id), :data => {:confirm => 'Are you sure you want to approve the leave application?'}, :title => 'Approve',:class => 'previewButton tip_trigger') +
 	link_to('/Decline', '#', :class =>'pop_link' ,:title => 'Decline')
 	end
 	else
