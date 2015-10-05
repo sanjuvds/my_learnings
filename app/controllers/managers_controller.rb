@@ -1,6 +1,6 @@
 class ManagersController < ApplicationController
   before_action :set_manager, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_employee!
+  before_action :authenticate_employee!
   # GET /managers
   # GET /managers.json
   def index

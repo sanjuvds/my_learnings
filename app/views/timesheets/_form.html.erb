@@ -18,8 +18,9 @@
  <div class="field">
 	<%= f.label :to_date %><br />
     <%= f.date_field :to_date %>
-    
+    <% if current_employee.present? %>
     <%= f.hidden_field :employee_id, :value => current_employee.id %>
+    <% end %>
   </div>
 
 <div class="field">

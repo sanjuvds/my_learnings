@@ -1,5 +1,6 @@
 class TimesheetsController < ApplicationController
   before_action :set_timesheet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_employee!
   def index
     @timesheets = Timesheet.where(employee_id: current_employee.id)
   end
@@ -25,10 +26,11 @@ class TimesheetsController < ApplicationController
   end
 
   def update
-    decline_remark = params[:timesheet][:decline_remarks]
+    # decline_remark = params[:timesheet][:decline_remarks]
+    status = params[:timesheet][:status]
     respond_to do |format|
       if @timesheet.update(timesheet_params)
-        if decline_remark.present?
+        if status.present? && status == "Rejected"
           format.html { redirect_to managers_url, notice: 'Leave application was successfully rejected.' }
           format.json { render :index, status: :ok, location: @timesheet }
         else
