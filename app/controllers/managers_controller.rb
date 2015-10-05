@@ -1,6 +1,6 @@
 class ManagersController < ApplicationController
   before_action :set_manager, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_employee!
   # GET /managers
   # GET /managers.json
   def index
@@ -26,8 +26,6 @@ class ManagersController < ApplicationController
   end
 
   def popup_declined
-    # @interview_round = InterviewRound.where(id: params[:id]).first
-    
     @timesheet = Timesheet.find_by(id: params[:manager_id])
     respond_to do |format|
       format.js
@@ -56,22 +54,15 @@ class ManagersController < ApplicationController
   
   def reject
     timesheet = params[:timesheet]
-    
-    # timesheet_id = params[:timesheet_id]
     timesheet = Timesheet.find_by(timesheet_id)
-    
-    
     timesheet.status = 'Rejected'
     timesheet.save
     respond_to do |format|
-      # redirect_to your_controller_action_url
       format.html { redirect_to managers_url, notice: 'Timesheet was successfully rejected.' }
       format.json { head :no_content }
     end
   end  
 
-  # PATCH/PUT /managers/1
-  # PATCH/PUT /managers/1.json
   def update
     respond_to do |format|
       if @manager.update(manager_params)
@@ -84,8 +75,6 @@ class ManagersController < ApplicationController
     end
   end
 
-  # DELETE /managers/1
-  # DELETE /managers/1.json
   def destroy
     @manager.destroy
     respond_to do |format|
@@ -95,12 +84,10 @@ class ManagersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_manager
       @manager = Manager.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def manager_params
       params[:manager]
     end

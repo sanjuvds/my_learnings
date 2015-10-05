@@ -2,24 +2,27 @@ source 'https://rubygems.org'
 
 # Bundle edg e Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
 gem 'pg', '0.18.2'
 gem 'devise'
 gem 'resque'
 gem 'business_time'
 
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'wice_grid','~> 3.4.14'
 
 gem 'heroku'
 gem 'sass-rails', '~> 5.0'
-gem 'formtastic'#,'2.0.2'
 
 gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
+
+gem 'exception_notification', "2.6.1"
 
 gem 'therubyracer', :platforms => :ruby
 

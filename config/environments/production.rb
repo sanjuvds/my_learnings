@@ -34,6 +34,11 @@ Rails.application.configure do
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
+  
+  config.middleware.use ExceptionNotifier,
+  :email_prefix => "[mirraw_production] ",
+  :sender_address => %{"unioncloudadmin" <admin@mirrawproduction.org>},
+  :exception_recipients => %w{sanjuvds@gmail.com}
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
