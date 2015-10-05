@@ -39,8 +39,8 @@ Rails.application.configure do
     :port => 587,
     :domain => "nusdigital.com",
     :authentication => :plain,
-    :user_name => "esakkiyadav",
-    :password => "feb@1234",
+    :user_name => "sanjuvds",
+    :password => "sanjux@12",
     :enable_starttls_auto => true
   }
   config.action_mailer.default_url_options = { :host => "nusdigital.com" }
