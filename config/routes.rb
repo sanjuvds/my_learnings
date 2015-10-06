@@ -4,18 +4,16 @@ Rails.application.routes.draw do
     :'devise/registrations' => "employees/registrations"}
     
     
-  devise_for :employees, :controllers => { :registrations => "devise/registrations" }, :skip => [:sessions] do 
-    get 'signup' => 'devise/registrations#new', :as => :new_employee_registration 
-    post 'signup' => 'devise/registrations#create', :as => :employees_registration 
-  end  
+  # devise_for :employees, :controllers => { :registrations => "devise/registrations" }, :skip => [:sessions] do 
+    # get 'signup' => 'devise/registrations#new', :as => :new_employee_registration 
+    # post 'signup' => 'devise/registrations#create', :as => :employees_registration 
+  # end  
     
-  resources :employees
+  # resources :employees
   resources :timesheets do
         get 'approve'
         get 'reject' 
         
   end      
-  resources :managers do
-    get 'popup_declined'
-  end
+  resources :managers 
 end

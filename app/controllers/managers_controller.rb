@@ -1,11 +1,7 @@
 class ManagersController < ApplicationController
-  before_action :set_manager, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_employee!
-  # GET /managers
-  # GET /managers.json
   def index
     @timesheet =initialize_grid(Timesheet, 
-      # :include => [:event_type ,:event_ticket_types],
       :conditions => ["status = ?", 'Pending Approval'],
       :order => 'from_date'
     )
@@ -25,13 +21,4 @@ class ManagersController < ApplicationController
       format.json { head :no_content }
     end
   end  
- 
-  private
-    def set_manager
-      @manager = Manager.find(params[:id])
-    end
-
-    def manager_params
-      params[:manager]
-    end
 end
