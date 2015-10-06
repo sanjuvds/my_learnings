@@ -15,16 +15,6 @@ class ManagersController < ApplicationController
     end
   end
 
-  # GET /managers/1
-  # GET /managers/1.json
-  
-  def popup_declined
-    @timesheet = Timesheet.find_by(id: params[:manager_id])
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def reject
     timesheet = params[:timesheet]
     timesheet = Timesheet.find_by(timesheet_id)
