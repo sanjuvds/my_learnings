@@ -21,7 +21,7 @@ Rails.application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable serving static files from the `/public` folder by default since
-  # Apache or NGINX already handles this.
+  # Apache or NGINX already handles this.I 
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
@@ -47,11 +47,11 @@ Rails.application.configure do
   # config.action_mailer.default_url_options = { :host => "nusdigital.com" }
   
   
-  config.action_mailer.default_url_options = { host: 'localhost:3000'}
+  #config.action_mailer.default_url_options = { host: 'localhost:3000'}
 
-  config.action_mailer.perform_deliveries = true
+  #config.action_mailer.perform_deliveries = true
   # Override Action Mailer's 'silent errors' in development
-  config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.raise_delivery_errors = true
   
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
