@@ -54,7 +54,9 @@
     <%= f.select :is_manager, [["Yes", true], ["No", false]] %>
   </div>
   
-  
+  <div class="field">
+   <%= f.file_field :avatar %>
+  </div> 
 
    <div class="actions">
     <%= f.submit %>
