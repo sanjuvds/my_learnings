@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :phone
     devise_parameter_sanitizer.for(:sign_up) << :is_manager
     devise_parameter_sanitizer.for(:sign_up) << :manager_id
+    devise_parameter_sanitizer.for(:sign_up) << :avator
   end
 
   def after_update_path_for(resource)

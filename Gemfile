@@ -9,6 +9,8 @@ gem 'devise'
 gem 'resque'
 gem 'business_time'
 
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
 group :production do
   gem 'rails_12factor'
 end

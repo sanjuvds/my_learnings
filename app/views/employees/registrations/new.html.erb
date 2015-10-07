@@ -50,8 +50,10 @@
 <div class="field">
 	<%= f.label :is_manager? %>
 	<br />
-	<%= f.select :is_manager, [["Yes", 1], ["No", 0]] %>
+	<%= f.select :is_manager, [["Yes", true], ["No", false]] %>
 </div>
+
+  
 
 <div class="actions">
 	<%= f.submit "Sign up" %>
